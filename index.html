@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Portafolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="mediaqueries.css">   
+
+</head>
+    <body>
+    
+        <canvas id="particles"></canvas>
+
+        <nav id="desktop-nav">
+            <a href="#profile" class="logo">Anyelo<span> Gutierrez Correa.</span></a><div>
+                <ul class="nav-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#experience"> Experience</a></li>
+                    <li><a href="#chart"> Skill</a></li>
+                    <li><a href="#projects"> Projects</a></li>
+                    <li><a href="#contact"> Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+        <nav id="hamburguesa-nav">
+            <div class="logo">Anyelo Gutierrez Correa</Canvas></div>
+            <div class="hamburguesa-menu">
+                <div class="hamburguesa-icon" onclick="toggleMenu()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>        
+                <div class="menu-links">
+                    <li><a href="#about" onclick="toggleMenu()">About</a></li>
+                    <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
+                    <li><a href="#chart" onclick="toggleMenu()">Skill</a></li>
+                    <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
+                    <li><a href="#contact" onclick="toggleMenu()">Contact   </a></li>
+                </div>
+            </div>    
+        </nav>
+        <section id="profile">
+            <div class="section_pic-container">
+                <img src="./assets/profile-pic.png" alt="Anyelo Gutierrez Correa">
+            </div>
+            <div class="section_text reveal">
+                <p class="section_text_p1">Hello, I'm</p>
+                <h1 class="tittle">Systems and computer <span>engineer.  </span> </h1>
+                <P class="section_text_P2"><span id="typewriter"></span></P>
+                <div class="btn-container">
+                    <button class="btn btn-color-2 " onclick="window.open('./assets/resume-example.pdf')"> Dowload CV</button>
+                    <button class="btn btn-color-1 " onclick="location.href='./#contact'"> Contact Info</button>
+                </div>
+                <div id="social-container">
+                    <img src="./assets/github.png" alt="my github profesional" class="icon" onclick="location.href='https://www.github.com/'">
+                    <img src="./assets/linkedin.png" alt="my likending profesional" class="icon" onclick="location.href='https://www.linkedin.com/in/angelo-gutierrez-336a191a7'">
+                </div>
+            </div>
+        </section>
+        <section id="about">
+            <p class="section_text_p1">Get To Know More</p>
+            <h1 class="tittle reveal">About Me</h1>
+            <div class="section-container">
+                <div class="section_pic-container">
+                    <img src="./assets/about-pic.png" alt="profile picture" class="about-pic"/>
+                </div>
+                <div class="about-details-container">
+                    <div class="about-container">
+                        <div class="details-container">
+                            <img src="./assets/experience.png" alt="Experience icon" class="icon"/>
+                            <h3>Experience</h3>
+                            <p>2+ years<br>Frontend Development</p>
+                        </div>
+                        <div class="details-container">
+                            <img src="./assets/education.png" alt="Experience icon" class="icon"/>
+                            <h3>Education</h3>
+                            <p>2+ years<br>Frontend Development</p>
+                        </div>                        
+                    </div>
+                    <div class="text-container">
+                        <p>Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas "Letraset", las cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum.</p>
+                    </div>
+                </div>
+            </div>
+            <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='./#experience'">
+        </section>
+
+        <!-- HEADER -->
+        
+        <div id="experience">
+            <p class="section_text_p1">Explore My</p>
+            <h1 class="tittle reveal">Experience</h1>
+        </div>
+           
+        <!-- CONTENEDOR QUE CONFINA EL FIXED -->
+        <div class="exp-container">
+            <section id="Expe-se">
+                <div class="content reveal">
+                    <div class="title">Timeless Aesthetics</div>
+                    <div class="desc">We believe great design never goes out of style. Each project is built on clean lines, thoughtful materials, and harmony between form and function.</div>
+                </div>
+                <div class="img-box reveal">
+                    <img src="https://images.unsplash.com/photo-1760286159549-4413b0063baf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NjE1ODY2MDJ8&ixlib=rb-4.1.0&q=80&w=800" alt="">
+                </div>
+            </section>
+            <section>
+                <div class="content reveal">
+                    <div class="title">Made for You</div>
+                    <div class="desc">Your home should tell your story. We tailor every detail — from layout to lighting — to reflect your lifestyle, personality, and vision.</div>
+                </div>
+                <div class="img-box reveal">
+                    <img src="https://images.unsplash.com/photo-1760632373541-8db1f9eb8d19?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NjE1ODcyMjd8&ixlib=rb-4.1.0&q=80&w=800" alt="">
+                </div>
+            </section>
+            <section>
+                <div class="content reveal">
+                    <div class="title">Smooth Sailing</div>
+                    <div class="desc">From concept to completion, we guide you through each step. Our transparent process ensures clarity, collaboration, and creativity at every stage.</div>
+                </div>
+                <div class="img-box reveal">
+                    <img src="https://images.unsplash.com/photo-1760000116856-e9dfd91acbfc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NjE1ODcyNTN8&ixlib=rb-4.1.0&q=80&w=800" alt="">
+                </div>
+            </section>
+            <section>
+                <div class="content reveal">
+                    <div class="title">Earth in Mind</div>
+                    <div class="desc">We design with respect for the planet. From local craftsmanship to eco-friendly materials, our spaces are beautiful, responsible, and lasting.</div>
+                </div>
+                <div class="img-box">
+                    <img src="https://images.unsplash.com/photo-1758718036788-de50f9fd2192?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NjE1ODcyNzl8&ixlib=rb-4.1.0&q=80&w=800" alt="">
+                </div>
+            </section>
+        </div>
+
+        <div style="text-align:center; padding: 2rem;">
+        <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='./#chart'"/>
+        </div>
+
+        <section id="chart">
+            <p class="section_text_p1">Explore My</p>
+            <h1 class="tittle reveal">Skill</h1>
+            <div class="chart-details-container">
+                <div class="about-container">
+                    <div class="details-container">
+                        <canvas id="myChart" class="chart-container"></canvas>
+                        <p class="section_text_p1">Browse My Recent</p>
+                    </div>
+                    <div class="details-container">
+                        <canvas id="myChart1" class="chart-container"></canvas>
+                        <p class="section_text_p1">Browse My Recent</p>
+                    </div>
+                    <div class="details-container">
+                        <canvas id="myChart2" class="chart-container"></canvas>
+                        <p class="section_text_p1">Browse My Recent</p>
+                    </div>
+                    <div class="details-container">
+                        <canvas id="myChart3" class="chart-container"></canvas>
+                        <p class="section_text_p1">Browse My Recent</p>
+                    </div>
+                </div>
+                <div class="text-container-chart">
+                    <p>Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas "Letraset", las cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum.</p>
+                </div>     
+            </div>            
+            <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='./#projects'"/>
+        </section>
+        <section id="projects">
+            <p class="section_text_p1">Browse My Recent</p>
+            <h1 class="tittle reveal">Projects</h1>
+            <div class="experience-details-container reveal">
+                <div class="about-container">
+                    <div class="details-container color-container glass-card reveal reveal-delay-1">
+                        <div class="article-container">
+                            <img src="./assets/project-1.png" alt="Projects 1" class="project-img"/>
+                        </div>
+                        <h2 class="experience-sub-title project-tittle">Projects One</h2>
+                        <div class="btn-container">
+                            <button class="btn btn-color-2 projects-btn" onclick="location.href='https://github.com'">GitHub</button>
+                            <button class="btn btn-color-2 projects-btn" onclick="location.href='https://github.com'">Live Demo</button>
+                        </div>
+                    </div>    
+                    <div class="details-container color-container glass-card reveal reveal-delay-2">
+                        <div class="article-container">
+                            <img src="./assets/project-2.png" alt="Projects 1" class="project-img"/>
+                        </div>
+                        <h2 class="experience-sub-title project-tittle">Projects Two</h2>
+                        <div class="btn-container">
+                            <button class="btn btn-color-2 projects-btn" onclick="location.href='https://github.com'">GitHub</button>
+                            <button class="btn btn-color-2 projects-btn" onclick="location.href='https://github.com'">Live Demo</button>
+                        </div>
+                    </div>
+                    <div class="details-container color-container glass-card reveal reveal-delay-1">
+                        <div class="article-container">
+                            <img src="./assets/project-3.png" alt="Projects 1" class="project-img"/>
+                        </div>
+                        <h2 class="experience-sub-title project-tittle">Projects Three</h2>
+                        <div class="btn-container">
+                            <button class="btn btn-color-2 projects-btn" onclick="location.href='https://github.com'">GitHub</button>
+                            <button class="btn btn-color-2 projects-btn" onclick="location.href='https://github.com'">Live Demo</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='./#contact'"/>
+        </section>
+        <section id="contact">
+            <p class="section_text_p1">Get In Touch</p>
+            <h1 class="tittle reveal">Contact Me</h1>
+            <div class="contact-info-upper-container">
+                <div class="contact-info-container">
+                    <img src="./assets/email.png" alt="email icon" class="email-icon icon contact-icon"/>
+                    <p><a href="Anyelo:Angelwolf085@gmail.com">Gutierrezcorreaangelo85@gmail.com</a></p>
+                </div>
+                <div class="contact-info-container">
+                    <img src="./assets/linkedin.png" alt="likedIn icon" class="icon contact-icon"/>
+                    <p><a href="https://https://www.linkedin.com/in/angelo-gutierrez-336a191a7/">LinkedIn</a></p>
+                </div>
+            </div>
+        </section>
+        <footer>
+            <nav>
+                <div class="nav-links-container">
+                    <ul class="nav-links">
+                        <li><a href="#about"> About</a></li>
+                        <li><a href="#experience"> Experience</a></li>
+                        <li><a href="#chart"> Skill</a></li>
+                        <li><a href="#projects"> Projects</a></li>
+                        <li><a href="#profile"> Home</a></li>
+                    </ul>
+                </div>
+            </nav>
+            <p>Copyrigh &#169; 2024 Anyelo Gutierrez Correa. All Rights Reserved</p>
+        </footer>     
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script src="FX.js"></script>
+        <script src="skills-chart.js"></script>
+        <script src="script.js"></script>    
+        
+    </body>
+</html>
+
+
+
