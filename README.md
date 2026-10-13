@@ -9,9 +9,19 @@ https://anyelo85.github.io/portafolio/
 ## Tecnologías
 
 - HTML5
-- CSS3
+- CSS3 (Flexbox, Grid y media queries)
 - JavaScript (vanilla)
-- Chart.js (vía CDN)
+- Google Fonts (Urbanist, Righteous)
+- Chart.js (vía CDN; hoy sin gráficos activos)
+
+## Secciones
+
+- **Sobre mí** (`#about`)
+- **Experiencia** (`#experience`) — carrusel de tarjetas
+- **Educación** (`#education`)
+- **Habilidades** (`#chart`)
+- **Proyectos** (`#projects`)
+- **Contacto** (`#contact`)
 
 ## Estructura
 
@@ -56,6 +66,19 @@ portafolio/
    │     └─ apple-touch-icon.png
    └─ resume-example.pdf
 ```
+
+## Contacto
+
+- Email: anyeloingenierosistema@gmail.com
+- LinkedIn: https://www.linkedin.com/in/angelo-guti%C3%A9rrez-correa-406070338/
+- GitHub: https://github.com/Anyelo85
+- Hoja de vida: `cv/HV_Anyelo_Gutierrez_Correa_Publica.pdf`
+
+## Despliegue
+
+Publicado con GitHub Pages desde la rama `main` (raíz del repositorio). Al ser un sitio estático no requiere paso de compilación.
+
+El sitio incluye `<meta name="robots" content="noindex, nofollow">` y un `robots.txt` con `Disallow: /`, por lo que no se indexa en buscadores.
 
 ## Cómo verlo en local
 
