@@ -92,6 +92,10 @@ function initExperienceCarousel() {
     window.addEventListener('resize', updateCarousel);
     window.addEventListener('load', updateCarousel);
 
+    if (document.fonts && document.fonts.ready) {
+        document.fonts.ready.then(updateCarousel);
+    }
+
     updateCarousel();
     startAutoplay();
 }

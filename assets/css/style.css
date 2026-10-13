@@ -35,8 +35,8 @@ body::before {
 #particles {
   position: fixed !important;
   inset: 0 !important;
-  width: 100vw !important;
-  height: 100vh !important;
+  width: 100% !important;
+  height: 100% !important;
   pointer-events: none !important;
   z-index: 0 !important;
 }
@@ -118,6 +118,11 @@ html{
 
 p{
     color: rgb(85, 85, 85);
+}
+
+img{
+    max-width: 100%;
+    height: auto;
 }
 
 /*TRANSSITION*/
@@ -1139,7 +1144,7 @@ a.btn:hover{
 .project-img{
     border-radius: 2rem;
     width: 100%;
-    height: 100%;
+    height: auto;
 }
 
 .project-tittle{
