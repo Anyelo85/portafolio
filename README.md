@@ -32,20 +32,28 @@ portafolio/
    │  ├─ fx.js
    │  └─ skills-chart.js
    ├─ img/
-   │  └─ proyectos/
-   │     ├─ loweb.png
-   │     ├─ casa-viena.png
-   │     └─ repos-github-gitlab.png
-   ├─ profile-pic.png
-   ├─ profile-pic-2.png
-   ├─ about-pic.png
-   ├─ arrow.png
-   ├─ experience.png
-   ├─ education.png
-   ├─ email.png
-   ├─ github.png
-   ├─ linkedin.png
-   ├─ checkmark.png
+   │  ├─ proyectos/
+   │  │  ├─ loweb.png
+   │  │  ├─ casa-viena.png
+   │  │  └─ repos-github-gitlab.png
+   │  ├─ perfil/
+   │  │  ├─ profile-pic.png
+   │  │  ├─ profile-pic-2.png
+   │  │  └─ about-pic.png
+   │  ├─ iconos/
+   │  │  ├─ arrow.png
+   │  │  ├─ checkmark.png
+   │  │  ├─ email.png
+   │  │  ├─ github.png
+   │  │  └─ linkedin.png
+   │  ├─ secciones/
+   │  │  ├─ experience.png
+   │  │  └─ education.png
+   │  └─ favicon/
+   │     ├─ favicon.svg
+   │     ├─ favicon.ico
+   │     ├─ favicon-32.png
+   │     └─ apple-touch-icon.png
    └─ resume-example.pdf
 ```
 
