@@ -33,9 +33,9 @@ portafolio/
    │  └─ skills-chart.js
    ├─ img/
    │  └─ proyectos/
-   │     ├─ project-1.png
-   │     ├─ project-2.png
-   │     └─ project-3.png
+   │     ├─ loweb.png
+   │     ├─ casa-viena.png
+   │     └─ repos-github-gitlab.png
    ├─ profile-pic.png
    ├─ profile-pic-2.png
    ├─ about-pic.png
