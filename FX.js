@@ -60,9 +60,10 @@ function drawParticles() {
 
 /*CURSOR*/
 const phrases = [
-  'Frontend Developer',
-  'UI/UX Enthusiast',
-  'Problem Solver'
+'Analista de Requerimientos',
+'Desarrollador de software (Frontend)',
+'Analista en Calidad de Software',
+'Analista en Ciberseguridad',
 ];
 let phraseIndex = 0, charIndex = 0, isDeleting = false;
 const el = document.getElementById('typewriter');
@@ -86,28 +87,76 @@ function type() {
 }
 type();
 
-const revealEls = document.querySelectorAll('.reveal');
+const revealEls = Array.from(document.querySelectorAll('.reveal'));
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(e => {
-    if (e.isIntersecting) e.target.classList.add('visible');
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      observer.unobserve(e.target);
+    }
   });
-}, { threshold: 0.15 });
+}, { threshold: 0.1, rootMargin: '0px 0px -8% 0px' });
 
-revealEls.forEach(el => observer.observe(el));
+const groupCounters = new Map();
+revealEls.forEach(el => {
+  const parent = el.parentElement;
+  const index = groupCounters.get(parent) || 0;
+  const hasManualDelay = el.classList.contains('reveal-delay-1') ||
+                         el.classList.contains('reveal-delay-2') ||
+                         el.classList.contains('reveal-delay-3');
+  if (!hasManualDelay) {
+    el.style.transitionDelay = `${Math.min(index * 70, 280)}ms`;
+  }
+  groupCounters.set(parent, index + 1);
+  observer.observe(el);
+});
 
-/* EXPERIENCE IMAGE VISIBILITY */
-const expImages = document.querySelectorAll('.exp-container .img-box');
-const expContainer = document.querySelector('.exp-container');
+/*DESPLAZAMIENTO SUAVE ENTRE SECCIONES*/
+function animateScrollTo(target) {
+  const root = document.scrollingElement || document.documentElement;
+  const startY = window.pageYOffset;
+  const targetY = target.getBoundingClientRect().top + startY;
+  const distance = targetY - startY;
+  if (Math.abs(distance) < 2) return;
 
-expImages.forEach(img => img.style.visibility = 'hidden');
+  const duration = Math.min(1100, Math.max(450, Math.abs(distance) * 0.5));
+  const startTime = performance.now();
+  const previousBehavior = root.style.scrollBehavior;
+  root.style.scrollBehavior = 'auto';
 
-window.addEventListener('scroll', () => {
-  if (!expContainer) return;
-  
-  const rect = expContainer.getBoundingClientRect();
-  const isVisible = rect.top < window.innerHeight * 0.5 && rect.bottom > 0;
-  
-  expImages.forEach(img => {
-    img.style.visibility = isVisible ? 'visible' : 'hidden';
-  });
+  const ease = (t) => (t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2);
+
+  const step = (now) => {
+    const progress = Math.min(1, (now - startTime) / duration);
+    window.scrollTo(0, startY + distance * ease(progress));
+    if (progress < 1) {
+      requestAnimationFrame(step);
+    } else {
+      root.style.scrollBehavior = previousBehavior;
+    }
+  };
+
+  requestAnimationFrame(step);
+}
+
+document.addEventListener('click', (event) => {
+  const link = event.target.closest('a[href^="#"]');
+  if (!link) return;
+  const hash = link.getAttribute('href');
+  if (!hash || hash.length < 2) return;
+  const target = document.querySelector(hash);
+  if (!target) return;
+  event.preventDefault();
+  animateScrollTo(target);
+  try { history.pushState(null, '', hash); } catch (e) {}
+});
+
+/*DESPLAZAMIENTO SUAVE AL CARGAR CON #seccion*/
+window.addEventListener('load', () => {
+  const hash = window.__initialHash;
+  if (!hash) return;
+  const target = document.querySelector(hash);
+  if (!target) return;
+  animateScrollTo(target);
+  try { history.replaceState(null, '', hash); } catch (e) {}
 });

@@ -1,9 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
     <title>Mi Portafolio</title>
+    <script>
+      (function () {
+        if ('scrollRestoration' in history) {
+          try { history.scrollRestoration = 'manual'; } catch (e) {}
+        }
+        if (location.hash && location.hash.length > 1) {
+          try {
+            window.__initialHash = location.hash;
+            history.replaceState(null, '', location.pathname + location.search);
+          } catch (e) {
+            window.__initialHash = null;
+          }
+        }
+      })();
+    </script>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="mediaqueries.css">   
 
@@ -11,15 +27,15 @@
     <body>
     
         <canvas id="particles"></canvas>
-
         <nav id="desktop-nav">
             <a href="#profile" class="logo">Anyelo<span> Gutierrez Correa.</span></a><div>
                 <ul class="nav-links">
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#experience"> Experience</a></li>
-                    <li><a href="#chart"> Skill</a></li>
-                    <li><a href="#projects"> Projects</a></li>
-                    <li><a href="#contact"> Contact</a></li>
+                    <li><a href="#about">Sobre mí</a></li>
+                    <li><a href="#experience"> Experiencia</a></li>
+                    <li><a href="#education"> Educación</a></li>
+                    <li><a href="#chart"> Habilidades</a></li>
+                    <li><a href="#projects"> Proyectos</a></li>
+                    <li><a href="#contact"> Contacto</a></li>
                 </ul>
             </div>
         </nav>
@@ -32,189 +48,490 @@
                     <span></span>
                 </div>        
                 <div class="menu-links">
-                    <li><a href="#about" onclick="toggleMenu()">About</a></li>
-                    <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
-                    <li><a href="#chart" onclick="toggleMenu()">Skill</a></li>
-                    <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
-                    <li><a href="#contact" onclick="toggleMenu()">Contact   </a></li>
+                    <li><a href="#about" onclick="toggleMenu()">Sobre mí</a></li>
+                    <li><a href="#experience" onclick="toggleMenu()">Experiencia</a></li>
+                    <li><a href="#education" onclick="toggleMenu()">Educación</a></li>
+                    <li><a href="#chart" onclick="toggleMenu()">Habilidades</a></li>
+                    <li><a href="#projects" onclick="toggleMenu()">Proyectos</a></li>
+                    <li><a href="#contact" onclick="toggleMenu()">Contacto   </a></li>
                 </div>
             </div>    
         </nav>
-        <section id="profile">
+        <section id="profile" class="site-section">
             <div class="section_pic-container">
                 <img src="./assets/profile-pic.png" alt="Anyelo Gutierrez Correa">
             </div>
             <div class="section_text reveal">
-                <p class="section_text_p1">Hello, I'm</p>
-                <h1 class="tittle">Systems and computer <span>engineer.  </span> </h1>
+                <p class="section_text_p1">Hola, soy</p>
+                <h1 class="tittle">Ingeniero de <span>sistemas y computación.  </span> </h1>
                 <P class="section_text_P2"><span id="typewriter"></span></P>
                 <div class="btn-container">
-                    <button class="btn btn-color-2 " onclick="window.open('./assets/resume-example.pdf')"> Dowload CV</button>
-                    <button class="btn btn-color-1 " onclick="location.href='./#contact'"> Contact Info</button>
+                    <a class="btn btn-color-2" href="cv/HV_Anyelo_Gutierrez_Correa_Publica.pdf" download>Descargar hoja de vida</a>
                 </div>
                 <div id="social-container">
-                    <img src="./assets/github.png" alt="my github profesional" class="icon" onclick="location.href='https://www.github.com/'">
-                    <img src="./assets/linkedin.png" alt="my likending profesional" class="icon" onclick="location.href='https://www.linkedin.com/in/angelo-gutierrez-336a191a7'">
+                    <img src="./assets/github.png" alt="mi GitHub profesional" class="icon" onclick="window.open('https://github.com/Anyelo85','_blank')">
+                    <img src="./assets/linkedin.png" alt="mi LinkedIn profesional" class="icon" onclick="window.open('https://www.linkedin.com/in/angelo-guti%C3%A9rrez-correa-406070338/','_blank')">
                 </div>
             </div>
         </section>
-        <section id="about">
-            <p class="section_text_p1">Get To Know More</p>
-            <h1 class="tittle reveal">About Me</h1>
+        <section id="about" class="site-section">
+            <p class="section_text_p1">Conoce más</p>
+            <h1 class="tittle reveal">Sobre mí</h1>
             <div class="section-container">
                 <div class="section_pic-container">
-                    <img src="./assets/about-pic.png" alt="profile picture" class="about-pic"/>
+                    <img src="./assets/about-pic.png" alt="foto de perfil" class="about-pic"/>
                 </div>
                 <div class="about-details-container">
                     <div class="about-container">
                         <div class="details-container">
-                            <img src="./assets/experience.png" alt="Experience icon" class="icon"/>
-                            <h3>Experience</h3>
-                            <p>2+ years<br>Frontend Development</p>
+                            <img src="./assets/experience.png" alt="Icono de experiencia" class="icon"/>
+                            <h3>Experiencia</h3>
+                            <p>10+ Años<br>Sistema de informacion</p>
                         </div>
                         <div class="details-container">
-                            <img src="./assets/education.png" alt="Experience icon" class="icon"/>
-                            <h3>Education</h3>
-                            <p>2+ years<br>Frontend Development</p>
+                            <img src="./assets/education.png" alt="Icono de educación" class="icon"/>
+                            <h3>Educacion</h3>
+                            <p>Profesional<br>Ingeniero de sistema</p>
                         </div>                        
                     </div>
                     <div class="text-container">
-                        <p>Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas "Letraset", las cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum.</p>
+                        <p>Ingeniero de Sistemas con más de 10 años de experiencia en desarrollo web, administración de sistemas y ciberseguridad. Como analista de requerimientos senior en software fiduciario y bancario, definí validaciones y reglas campo a campo y apoyé pruebas de APIs en Postman, creando escenarios y contrastando las respuestas con la especificación. Conozco el software desde el requerimiento hasta el código (PHP, JavaScript, React, APIs REST, SQL), lo que me ayuda a entender dónde puede fallar una funcionalidad. Enfocado en calidad de software y pruebas de integración.</p>
                     </div>
                 </div>
             </div>
-            <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='./#experience'">
+            <a href="#experience" aria-label="Ir a Experiencia" class="arrow-link"><img src="./assets/arrow.png" alt="Icono de flecha" class="icon arrow"></a>
         </section>
 
-        <!-- HEADER -->
-        
-        <div id="experience">
-            <p class="section_text_p1">Explore My</p>
-            <h1 class="tittle reveal">Experience</h1>
-        </div>
-           
-        <!-- CONTENEDOR QUE CONFINA EL FIXED -->
-        <div class="exp-container">
-            <section id="Expe-se">
-                <div class="content reveal">
-                    <div class="title">Timeless Aesthetics</div>
-                    <div class="desc">We believe great design never goes out of style. Each project is built on clean lines, thoughtful materials, and harmony between form and function.</div>
-                </div>
-                <div class="img-box reveal">
-                    <img src="https://images.unsplash.com/photo-1760286159549-4413b0063baf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NjE1ODY2MDJ8&ixlib=rb-4.1.0&q=80&w=800" alt="">
-                </div>
-            </section>
-            <section>
-                <div class="content reveal">
-                    <div class="title">Made for You</div>
-                    <div class="desc">Your home should tell your story. We tailor every detail — from layout to lighting — to reflect your lifestyle, personality, and vision.</div>
-                </div>
-                <div class="img-box reveal">
-                    <img src="https://images.unsplash.com/photo-1760632373541-8db1f9eb8d19?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NjE1ODcyMjd8&ixlib=rb-4.1.0&q=80&w=800" alt="">
-                </div>
-            </section>
-            <section>
-                <div class="content reveal">
-                    <div class="title">Smooth Sailing</div>
-                    <div class="desc">From concept to completion, we guide you through each step. Our transparent process ensures clarity, collaboration, and creativity at every stage.</div>
-                </div>
-                <div class="img-box reveal">
-                    <img src="https://images.unsplash.com/photo-1760000116856-e9dfd91acbfc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NjE1ODcyNTN8&ixlib=rb-4.1.0&q=80&w=800" alt="">
-                </div>
-            </section>
-            <section>
-                <div class="content reveal">
-                    <div class="title">Earth in Mind</div>
-                    <div class="desc">We design with respect for the planet. From local craftsmanship to eco-friendly materials, our spaces are beautiful, responsible, and lasting.</div>
-                </div>
-                <div class="img-box">
-                    <img src="https://images.unsplash.com/photo-1758718036788-de50f9fd2192?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NjE1ODcyNzl8&ixlib=rb-4.1.0&q=80&w=800" alt="">
-                </div>
-            </section>
-        </div>
+        <section id="experience" class="site-section">
+            <p class="section_text_p1">Explora mi</p>
+            <h1 class="tittle reveal">Experiencia</h1>
 
-        <div style="text-align:center; padding: 2rem;">
-        <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='./#chart'"/>
-        </div>
+            <div class="experience-carousel reveal">
+                <div class="experience-carousel__viewport">
+                    <div class="experience-track">
 
-        <section id="chart">
-            <p class="section_text_p1">Explore My</p>
-            <h1 class="tittle reveal">Skill</h1>
-            <div class="chart-details-container">
-                <div class="about-container">
-                    <div class="details-container">
-                        <canvas id="myChart" class="chart-container"></canvas>
-                        <p class="section_text_p1">Browse My Recent</p>
-                    </div>
-                    <div class="details-container">
-                        <canvas id="myChart1" class="chart-container"></canvas>
-                        <p class="section_text_p1">Browse My Recent</p>
-                    </div>
-                    <div class="details-container">
-                        <canvas id="myChart2" class="chart-container"></canvas>
-                        <p class="section_text_p1">Browse My Recent</p>
-                    </div>
-                    <div class="details-container">
-                        <canvas id="myChart3" class="chart-container"></canvas>
-                        <p class="section_text_p1">Browse My Recent</p>
+                        <article class="experience-card">
+                            <aside class="experience-card__aside">
+                                <span class="experience-company">LINKTIC</span>
+                                <span class="experience-period">2024 — 2026</span>
+                            </aside>
+                            <div class="experience-card__body">
+                                <h3 class="experience-role">Analista de requerimientos de software</h3>
+                                <ul class="experience-list">
+                                    <li>Redactar <strong>historias de usuario</strong> para sistemas <strong>bancarios y fiduciarios</strong>, definiendo funcionalidades, validaciones y especificaciones de cada campo.</li>
+                                    <li>Documentar <strong>integraciones por API</strong> entre <strong>Fiduprevisora</strong> y distintos <strong>bancos</strong>: campos a exportar, llaves de acceso y requisitos de cada entidad.</li>
+                                    <li>Apliqué <strong>casos de uso y escenarios de prueba</strong> para validar integraciones y funcionalidades bancarias contra las historias de usuario.</li>
+                                    <li>Trabajar con los desarrolladores para <strong>aclarar requerimientos</strong> y asegurar su correcta implementación.</li>
+                                    <li>Gestionar y documentar requerimientos, historias y despliegues en <strong>Azure DevOps</strong>.</li>
+                                    <li>Diseñé instrucciones precisas para <strong>automatizaciones con N8N y modelos de lenguaje (Llama)</strong> que redujeron la ambigüedad en la generación de historias de usuario, con tiempos de entrega récord y una <strong>calidad inicial del 75-85%</strong> según la complejidad; el resultado se completaba con <strong>revisión humana</strong>.</li>
+                                    <li>Aceleré y fortalecí la redacción de historias de usuario con <strong>herramientas de IA (OpenCode, Claude)</strong>.</li>
+                                </ul>
+                                <ul class="experience-tags">
+                                    <li>Postman</li>
+                                    <li>Azure DevOps</li>
+                                    <li>Jira</li>
+                                    <li>API REST</li>
+                                    <li>QA funcional</li>
+                                    <li>N8N</li>
+                                    <li>Llama</li>
+                                    <li>OpenCode</li>
+                                    <li>Claude</li>
+                                </ul>
+                            </div>
+                        </article>
+
+                        <article class="experience-card">
+                            <aside class="experience-card__aside">
+                                <span class="experience-company">Prestemonos.com</span>
+                                <span class="experience-period">2023 — 2024</span>
+                            </aside>
+                            <div class="experience-card__body">
+                                <h3 class="experience-role">Desarrollador de software frontend</h3>
+                                <ul class="experience-list">
+                                    <li>Diseñé y desarrollé <strong>aplicaciones web responsivas</strong> con <strong>PHP, JavaScript y React</strong>, adaptadas a celular, tablet y escritorio.</li>
+                                    <li>Desarrollé <strong>interfaces móviles con Flutter</strong>, compartiendo la lógica de negocio con la versión web.</li>
+                                    <li>Optimicé los tiempos de carga en un <strong>20%</strong> reduciendo el peso de recursos, mejorando el renderizado y limitando las peticiones innecesarias.</li>
+                                    <li>Implementé y consumí <strong>APIs REST</strong> para integrar servicios externos, mejorando la eficiencia del flujo de datos entre el <strong>frontend y el servidor</strong>.</li>
+                                    <li>Probé las funcionalidades antes de cada entrega (<strong>pruebas funcionales, de API y entre dispositivos</strong>) y corregí los errores encontrados.</li>
+                                    <li>Participé en un <strong>equipo ágil con Scrum</strong>: planificación de sprints, reuniones diarias, revisiones y entrega continua de funcionalidades.</li>
+                                    <li>Trabajé con <strong>control de versiones en Git</strong> para colaborar con el equipo y mantener el código ordenado.</li>
+                                </ul>
+                                <ul class="experience-tags">
+                                    <li>PHP</li>
+                                    <li>JavaScript</li>
+                                    <li>React</li>
+                                    <li>Flutter</li>
+                                    <li>HTML</li>
+                                    <li>CSS</li>
+                                    <li>API REST</li>
+                                    <li>Postman</li>
+                                    <li>Chrome DevTools</li>
+                                    <li>Scrum</li>
+                                    <li>Git</li>
+                                    <li>GitHub</li>
+                                    <li>Jira</li>
+                                </ul>
+                            </div>
+                        </article>
+
+                        <article class="experience-card">
+                            <aside class="experience-card__aside">
+                                <span class="experience-company">Met Group SAS</span>
+                                <span class="experience-period">2019 — 2023</span>
+                            </aside>
+                            <div class="experience-card__body">
+                                <h3 class="experience-role">Líder de Sistema de Información</h3>
+                                <p class="experience-context">Lideré la administración de sistemas inteligentes para flotas de transporte terrestre, aéreo y marítimo, integrando dispositivos de rastreo, videovigilancia y seguridad de red para clientes del sector de transporte pesado e industrial.</p>
+                                <ul class="experience-list">
+                                    <li>Configuré, instalé y administré a nivel de servidor <strong>sistemas de rastreo e inteligencia vehicular</strong>, integrando <strong>GPS</strong>, <strong>CCTV con cámaras análogas y digitales</strong> y <strong>DVRs industriales</strong> con múltiples canales seriales, lo que permitía sumar dispositivos adicionales como <strong>cámaras de detección facial de conductores</strong>, <strong>contadores de pasajeros</strong> y <strong>ruteadores con anuncio de paradas y siguiente estación</strong>.</li>
+                                    <li>Gestioné la <strong>seguridad de la red ITS</strong>, actualizando y configurando <strong>firewalls</strong>, lo que redujo las <strong>vulnerabilidades críticas en un 30%</strong>.</li>
+                                    <li>Administré los <strong>servidores de los clientes</strong>, instalé y <strong>homologué dispositivos nuevos</strong>, parametricé y configuré los equipos según cada <strong>vehículo o estación</strong>, y solucioné <strong>incidentes técnicos en campo y de forma remota</strong>.</li>
+                                    <li>Monitoreé y analicé <strong>tráfico de red con Splunk y Wireshark</strong>, generé <strong>reportes en Power BI</strong>, realicé <strong>pruebas de los sistemas instalados</strong> y <strong>capacité a equipos técnicos y de clientes</strong> en el uso de las herramientas de monitoreo.</li>
+                                </ul>
+                                <ul class="experience-tags">
+                                    <li>Jira</li>
+                                    <li>Splunk</li>
+                                    <li>Wireshark</li>
+                                    <li>Power BI</li>
+                                    <li>Python</li>
+                                    <li>SQL</li>
+                                    <li>Linux</li>
+                                    <li>NIST</li>
+                                </ul>
+                            </div>
+                        </article>
+
+                        <article class="experience-card">
+                            <aside class="experience-card__aside">
+                                <span class="experience-company">CPC</span>
+                                <span class="experience-period">2018 — 2019</span>
+                            </aside>
+                            <div class="experience-card__body">
+                                <h3 class="experience-role">Analista de desarrollo de sistemas de informacion</h3>
+                                <ul class="experience-list">
+                                    <li>Maqueté y desarrollé páginas web con <strong>HTML, CSS, JavaScript y jQuery</strong>, usando <strong>Bootstrap</strong> para el <strong>diseño responsive</strong>.</li>
+                                    <li>Realicé cambios de <strong>frontend en WordPress</strong>: temas, plantillas, estilos y contenido.</li>
+                                    <li>Probé los sitios antes de su entrega: revisé enlaces, formularios y diseño en <strong>Chrome, Firefox, Safari, Edge e Internet Explorer 11</strong>, y en celular y escritorio.</li>
+                                    <li>Detecté y <strong>reporté errores</strong>, y los corregí junto con el equipo hasta dejar el sitio estable.</li>
+                                    <li>Adapté páginas existentes a pantallas de <strong>celular y tablet</strong> para mejorar la <strong>experiencia del usuario</strong>.</li>
+                                    <li>Mejoré la <strong>velocidad de carga</strong> optimizando imágenes y archivos CSS y JavaScript.</li>
+                                    <li>Probé con <strong>Postman</strong> las consultas y respuestas entre el <strong>frontend y el servidor (PHP y MongoDB)</strong>, verificando que los datos se mostraran bien en el sitio.</li>
+                                </ul>
+                                <ul class="experience-tags">
+                                    <li>HTML</li>
+                                    <li>CSS</li>
+                                    <li>JavaScript</li>
+                                    <li>jQuery</li>
+                                    <li>Bootstrap</li>
+                                    <li>Photoshop</li>
+                                    <li>Chrome DevTools</li>
+                                    <li>Firefox DevTools</li>
+                                    <li>W3C</li>
+                                    <li>Trello</li>
+                                    <li>Jira</li>
+                                    <li>PageSpeed Insights</li>
+                                    <li>GTmetrix</li>
+                                    <li>Postman</li>
+                                </ul>
+                            </div>
+                        </article>
+
+                        <article class="experience-card">
+                            <aside class="experience-card__aside">
+                                <span class="experience-company">MDM Digital Solutions</span>
+                                <span class="experience-period">2017 — 2018</span>
+                            </aside>
+                            <div class="experience-card__body">
+                                <h3 class="experience-role">Desarrollador de software frontend</h3>
+                                <ul class="experience-list">
+                                    <li>Creé <strong>interfaces atractivas y funcionales</strong> con <strong>HTML, CSS, JavaScript, jQuery y Bootstrap</strong>, a partir de los diseños y requerimientos del cliente.</li>
+                                    <li>Maqueté <strong>sitios web responsivos</strong> que se ven bien en escritorio, tablet y celular.</li>
+                                    <li>Optimicé la <strong>usabilidad y el rendimiento</strong> de los sitios: comprimí imágenes, reduje y organicé archivos CSS y JavaScript, y mejoré los <strong>tiempos de carga</strong>.</li>
+                                    <li>Probé los sitios antes de su entrega: revisé enlaces, formularios y diseño en <strong>Chrome, Firefox, Safari, Edge e Internet Explorer 11</strong>, y corregí los errores encontrados.</li>
+                                    <li>Probé con <strong>Postman</strong> la comunicación del sitio con <strong>servicios web (APIs)</strong>, verificando que los formularios y los datos se enviaran y recibieran correctamente.</li>
+                                    <li>Colaboré con el equipo para <strong>ajustar y mantener sitios existentes</strong> según los cambios que pedía el cliente.</li>
+                                </ul>
+                                <ul class="experience-tags">
+                                    <li>HTML</li>
+                                    <li>CSS</li>
+                                    <li>JavaScript</li>
+                                    <li>jQuery</li>
+                                    <li>Bootstrap</li>
+                                    <li>Photoshop</li>
+                                    <li>Chrome DevTools</li>
+                                    <li>Firefox DevTools</li>
+                                    <li>Postman</li>
+                                    <li>W3C</li>
+                                    <li>PageSpeed Insights</li>
+                                    <li>GTmetrix</li>
+                                </ul>
+                            </div>
+                        </article>
+
+                        <article class="experience-card mysaas-card">
+                            <div class="experience-card__body">
+                                <div class="mysaas-head">
+                                    <h3 class="experience-role mysaas-title">MySaaS</h3>
+                                    <span class="experience-tag">En construcción</span>
+                                </div>
+                                <p class="mysaas-subtitle">POS + tienda online para pequeños comerciantes de Pereira. Evolución de LoWeb.</p>
+                                <p class="experience-summary">Sistema multi-tenant para que comerciantes gestionen inventario, ventas y catálogo con una interfaz mínima y clara. Modelo freemium: plan gratis (POS + catálogo) y premium (venta online con carrito).</p>
+
+                                <h4 class="mysaas-block-title">Stack</h4>
+                                <ul class="experience-tags mysaas-stack">
+                                    <li>Next.js 16</li>
+                                    <li>React 19</li>
+                                    <li>TypeScript</li>
+                                    <li>Prisma</li>
+                                    <li>PostgreSQL</li>
+                                    <li>Tailwind CSS v4</li>
+                                    <li>Kinde Auth</li>
+                                </ul>
+
+                                <h4 class="mysaas-block-title">Estado del proyecto</h4>
+                                <div class="mysaas-status">
+                                    <div class="mysaas-status__col">
+                                        <h5 class="mysaas-status__heading">Listo</h5>
+                                        <ul class="mysaas-list mysaas-list--done">
+                                            <li>Autenticación (Kinde)</li>
+                                            <li>Onboarding de negocio</li>
+                                            <li>Dashboard</li>
+                                            <li>Inventario (CRUD, filtros, paginación por cursor, exportación CSV, selección múltiple)</li>
+                                            <li>Variantes de producto con SKU único por negocio</li>
+                                        </ul>
+                                    </div>
+                                    <div class="mysaas-status__col">
+                                        <h5 class="mysaas-status__heading">Próximamente</h5>
+                                        <ul class="mysaas-list mysaas-list--soon">
+                                            <li>Ventas / POS</li>
+                                            <li>Clientes y fidelización</li>
+                                            <li>Tienda pública con carrito</li>
+                                            <li>Reportes</li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <h4 class="mysaas-block-title">Decisiones técnicas</h4>
+                                <ul class="experience-list mysaas-decisions">
+                                    <li>Arquitectura <strong>modular por features</strong>.</li>
+                                    <li><strong>Aislamiento de datos</strong> por negocio (multi-tenant).</li>
+                                    <li><strong>Transacciones atómicas</strong> al guardar productos y variantes.</li>
+                                    <li><strong>Server Components</strong> por defecto.</li>
+                                </ul>
+
+                                <div class="mysaas-progress">
+                                    <div class="mysaas-progress__track" role="progressbar" aria-label="Progreso del proyecto MySaaS: 5 de 9 módulos" aria-valuemin="0" aria-valuemax="9" aria-valuenow="5">
+                                        <div class="mysaas-progress__fill"></div>
+                                    </div>
+                                    <p class="mysaas-progress__label">5 de 9 módulos</p>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="experience-card">
+                            <aside class="experience-card__aside">
+                                <span class="experience-company">Casa Viena</span>
+                                <span class="experience-period">Actualidad</span>
+                            </aside>
+                            <div class="experience-card__body">
+                                <div class="experience-card__meta">
+                                    <span class="experience-badge">Emprendimiento</span>
+                                    <span class="experience-tag experience-tag--whatsapp">Shopify + WhatsApp</span>
+                                </div>
+                                <h3 class="experience-role">Tienda online con IA conectada a WhatsApp</h3>
+                        
+                                <ul class="experience-list">
+                                    <li>Conecté mi tienda de <strong>Shopify</strong> a <strong>WhatsApp con IA</strong> en menos de <strong>30 minutos</strong> para atender pedidos, consultar catálogo y vender sin costos altos de soporte manual.</li>
+                                    <li>Integración con <strong>Shopify Storefront API</strong> y <strong>Kapso</strong> para consultar productos por nombre, categoría, precio y disponibilidad en tiempo real.</li>
+                                    <li>El <strong>agente IA</strong> responde con catálogo, recomendación o enlace directo de compra, enviando texto, imágenes y enlaces de producto.</li>
+                                    <li>El cliente recibe soporte desde <strong>WhatsApp Business</strong> sin depender de un equipo grande, mejorando <strong>conversiones</strong>.</li>
+                                    <li>Personalicé el tema de <strong>Shopify</strong>: diseño y secciones a <strong>ancho completo</strong> desde el editor de temas, ajustando espaciado interno, márgenes, alineación y espaciado de secciones, bloques y botones.</li>
+                                    <li>Implementé <strong>efectos al pasar el cursor en botones</strong> con la configuración del tema y <strong>CSS personalizado</strong>, personalizando el tema con <strong>Liquid, HTML y CSS</strong>.</li>
+                                    <li>Integré y configuré <strong>apps de terceros</strong>: pago contra entrega (<strong>Releasit COD Form</strong>), reseñas de productos (<strong>Ali Reviews</strong>) y automatización de marketing (<strong>Klaviyo Email &amp; SMS</strong>).</li>
+                                    <li>Analicé el <strong>rendimiento de carga</strong> y el comportamiento de scripts <strong>JavaScript</strong> en páginas de colección.</li>
+                                </ul>
+                                <ul class="experience-tags">
+                                    <li>Shopify</li>
+                                    <li>Kapso</li>
+                                    <li>WhatsApp API</li>
+                                    <li>IA</li>
+                                    <li>Liquid</li>
+                                    <li>Editor de temas Shopify</li>
+                                    <li>HTML</li>
+                                    <li>CSS</li>
+                                    <li>JavaScript</li>
+                                    <li>Releasit COD Form</li>
+                                    <li>Ali Reviews</li>
+                                    <li>Klaviyo</li>
+                                </ul>
+                                <div class="experience-actions">
+                                    <a class="experience-link" href="https://casaviena.myshopify.com/" target="_blank" rel="noreferrer">Ver tienda</a>
+                                    <a class="experience-link experience-link--whatsapp" href="https://wa.me/573000000000?text=Hola%2C%20quiero%20ver%20los%20productos%20de%20Casa%20Viena" target="_blank" rel="noreferrer">WhatsApp</a>
+                                </div>
+                            </div>
+                        </article>
+
                     </div>
                 </div>
-                <div class="text-container-chart">
-                    <p>Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas "Letraset", las cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum.</p>
-                </div>     
-            </div>            
-            <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='./#projects'"/>
+
+                <div class="experience-carousel__footer">
+                    <button class="experience-carousel__button experience-carousel__button--prev" type="button" aria-label="Anterior experiencia">&#10094;</button>
+                    <div class="experience-carousel__dots" aria-label="Selector de experiencia"></div>
+                    <button class="experience-carousel__button experience-carousel__button--next" type="button" aria-label="Siguiente experiencia">&#10095;</button>
+                </div>
+            </div>
+            <a href="#education" aria-label="Ir a Educación" class="arrow-link"><img src="./assets/arrow.png" alt="Icono de flecha" class="icon arrow"></a>
         </section>
-        <section id="projects">
-            <p class="section_text_p1">Browse My Recent</p>
-            <h1 class="tittle reveal">Projects</h1>
+
+        <section id="education" class="site-section">
+            <p class="section_text_p1">Conoce más</p>
+            <h1 class="tittle reveal">Educación</h1>
+            <div class="education-grid">
+                <div class="details-container education-card reveal">
+                    <h3>Educación</h3>
+                    <ul class="education-list">
+                        <li>
+                            <span class="education-degree">Ingeniero de Sistemas (2023)</span>
+                            <span class="education-place">Universidad Tecnologica De Pereira | Culminado</span>
+                        </li>
+                        <li>
+                            <span class="education-degree">Tecnologo en Desarrollo de Sistemas de Informacion (2019)</span>
+                            <span class="education-place">SENA | Culminado</span>
+                        </li>
+                        <li>
+                            <span class="education-degree">Tecnico en Sistemas y Computacion (2017)</span>
+                            <span class="education-place">Inge Computo | Culminado</span>
+                        </li>
+                        <li>
+                            <span class="education-degree">Secundaria (2013)</span>
+                            <span class="education-place">Colegio Inem Felipe Perez | Culminado</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="details-container education-card reveal">
+                    <h3>Educación Complementaria</h3>
+                    <ul class="education-list">
+                        <li>
+                            <span class="education-degree">Coursera, Google (2024)</span>
+                            <span class="education-place">Certificacion en Ciberseguridad y Fundamentos de IA | Culminado</span>
+                        </li>
+                        <li>
+                            <span class="education-degree">Udemy (2026)</span>
+                            <span class="education-place">Cursos avanzados en desarrollo, IA y tecnologia</span>
+                            <ul class="education-courses">
+                                <li>Curso completo de QA Engineer desde 0 hasta avanzado</li>
+                                <li>React: De cero a experto</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <a href="#chart" aria-label="Ir a Habilidades" class="arrow-link"><img src="./assets/arrow.png" alt="Icono de flecha" class="icon arrow"></a>
+        </section>
+
+        <section id="chart" class="site-section">
+            <p class="section_text_p1">Habilidades</p>
+            <h1 class="tittle reveal">Técnicas</h1>
+            <div class="education-grid">
+                <div class="details-container education-card reveal">
+                    <h3>Habilidades Técnicas</h3>
+                    <ul class="education-list">
+                        <li>
+                            <span class="education-degree">Desarrollo Web</span>
+                            <span class="education-place">PHP, JavaScript (React, Node.js, Flutter), HTML, CSS y APIs REST.</span>
+                        </li>
+                        <li>
+                            <span class="education-degree">Ciberseguridad</span>
+                            <span class="education-place">Herramientas SIEM, Wireshark, Splunk, NIST y análisis de vulnerabilidades.</span>
+                        </li>
+                        <li>
+                            <span class="education-degree">Gestión de Inventarios</span>
+                            <span class="education-place">Diseño e implementación de sistemas de gestión de inventarios.</span>
+                        </li>
+                        <li>
+                            <span class="education-degree">Automatización de Procesos</span>
+                            <span class="education-place">Optimización de flujos de trabajo en ventas y logística.</span>
+                        </li>
+                        <li>
+                            <span class="education-degree">Administración de Sistemas</span>
+                            <span class="education-place">Linux, Windows, VMware, SQL y MySQL.</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="details-container education-card reveal">
+                    <h3>Herramientas y Metodologías</h3>
+                    <ul class="education-list">
+                        <li>
+                            <span class="education-degree">Herramientas Ofimáticas y Diseño</span>
+                            <span class="education-place">Jira, Power BI, Git, Figma, Photoshop, Illustrator, Google Workspace, Microsoft Office Suite, Trello, Asana, Slack y Notion.</span>
+                        </li>
+                        <li>
+                            <span class="education-degree">Metodologías Ágiles</span>
+                            <span class="education-place">Scrum y Kanban.</span>
+                        </li>
+                        <li>
+                            <span class="education-degree">Fundamentos de QA</span>
+                            <span class="education-place">Casos de prueba, requisitos, calidad, defectos o bugs.</span>
+                        </li>
+                        <li>
+                            <span class="education-degree">Diseño y Ejecución de Pruebas</span>
+                            <span class="education-place">Estructuración de casos de prueba, reporte de errores y seguimiento efectivo.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <a href="#projects" aria-label="Ir a Proyectos" class="arrow-link"><img src="./assets/arrow.png" alt="Icono de flecha" class="icon arrow"></a>
+        </section>
+        <section id="projects" class="site-section">
+            <p class="section_text_p1">Mira mis proyectos recientes</p>
+            <h1 class="tittle reveal">Proyectos</h1>
             <div class="experience-details-container reveal">
                 <div class="about-container">
                     <div class="details-container color-container glass-card reveal reveal-delay-1">
                         <div class="article-container">
-                            <img src="./assets/project-1.png" alt="Projects 1" class="project-img"/>
+                            <img src="./assets/project-1.png" alt="Proyecto 1" class="project-img"/>
                         </div>
-                        <h2 class="experience-sub-title project-tittle">Projects One</h2>
+                        <h2 class="experience-sub-title project-tittle">LOWEB</h2>
                         <div class="btn-container">
-                            <button class="btn btn-color-2 projects-btn" onclick="location.href='https://github.com'">GitHub</button>
-                            <button class="btn btn-color-2 projects-btn" onclick="location.href='https://github.com'">Live Demo</button>
+                            <!--button class="btn btn-color-2 projects-btn" onclick="location.href='https://github.com'">GitHub</button-->
+                            <a class="btn btn-color-2 projects-btn" href="https://loweb.mdmdigitalsolutions.com/" target="_blank" rel="noreferrer">Cotiza ya! </a>
                         </div>
                     </div>    
                     <div class="details-container color-container glass-card reveal reveal-delay-2">
                         <div class="article-container">
-                            <img src="./assets/project-2.png" alt="Projects 1" class="project-img"/>
+                            <img src="./assets/project-2.png" alt="Proyecto 1" class="project-img"/>
                         </div>
-                        <h2 class="experience-sub-title project-tittle">Projects Two</h2>
+                        <h2 class="experience-sub-title project-tittle">CASA VIENA</h2>
                         <div class="btn-container">
-                            <button class="btn btn-color-2 projects-btn" onclick="location.href='https://github.com'">GitHub</button>
-                            <button class="btn btn-color-2 projects-btn" onclick="location.href='https://github.com'">Live Demo</button>
+                            <!--button class="btn btn-color-2 projects-btn" onclick="location.href='https://github.com'">GitHub</button-->
+                            <a class="btn btn-color-2 projects-btn" href="https://casaviena.myshopify.com/" target="_blank" rel="noreferrer">Visitanos</a>
                         </div>
                     </div>
                     <div class="details-container color-container glass-card reveal reveal-delay-1">
                         <div class="article-container">
-                            <img src="./assets/project-3.png" alt="Projects 1" class="project-img"/>
+                            <img src="./assets/project-3.png" alt="Proyecto 1" class="project-img"/>
                         </div>
-                        <h2 class="experience-sub-title project-tittle">Projects Three</h2>
+                        <h2 class="experience-sub-title project-tittle">REPOSITORIOS</h2>
                         <div class="btn-container">
-                            <button class="btn btn-color-2 projects-btn" onclick="location.href='https://github.com'">GitHub</button>
-                            <button class="btn btn-color-2 projects-btn" onclick="location.href='https://github.com'">Live Demo</button>
+                            <a class="btn btn-color-2 projects-btn" href="https://github.com/Anyelo85" target="_blank" rel="noreferrer">GitHub</a>
+                            <!--button class="btn btn-color-2 projects-btn" onclick="location.href='https://github.com'">Demo en vivo</button-->
                         </div>
                     </div>
                 </div>
             </div>
-            <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='./#contact'"/>
+            <a href="#contact" aria-label="Ir a Contacto" class="arrow-link"><img src="./assets/arrow.png" alt="Icono de flecha" class="icon arrow"></a>
         </section>
-        <section id="contact">
-            <p class="section_text_p1">Get In Touch</p>
-            <h1 class="tittle reveal">Contact Me</h1>
+        <section id="contact" class="site-section">
+            <p class="section_text_p1">Ponte en contacto</p>
+            <h1 class="tittle reveal">Contáctame</h1>
             <div class="contact-info-upper-container">
                 <div class="contact-info-container">
-                    <img src="./assets/email.png" alt="email icon" class="email-icon icon contact-icon"/>
-                    <p><a href="Anyelo:Angelwolf085@gmail.com">Gutierrezcorreaangelo85@gmail.com</a></p>
+                    <img src="./assets/email.png" alt="Icono de correo" class="email-icon icon contact-icon"/>
+                    <p><a href="mailto:anyeloingenierosistema@gmail.com">anyeloingenierosistema@gmail.com</a></p>
                 </div>
                 <div class="contact-info-container">
-                    <img src="./assets/linkedin.png" alt="likedIn icon" class="icon contact-icon"/>
-                    <p><a href="https://https://www.linkedin.com/in/angelo-gutierrez-336a191a7/">LinkedIn</a></p>
+                    <img src="./assets/linkedin.png" alt="Icono de LinkedIn" class="icon contact-icon"/>
+                    <p><a href="https://www.linkedin.com/in/angelo-guti%C3%A9rrez-correa-406070338/" target="_blank" rel="noreferrer">LinkedIn</a></p>
                 </div>
             </div>
         </section>
@@ -222,20 +539,20 @@
             <nav>
                 <div class="nav-links-container">
                     <ul class="nav-links">
-                        <li><a href="#about"> About</a></li>
-                        <li><a href="#experience"> Experience</a></li>
-                        <li><a href="#chart"> Skill</a></li>
-                        <li><a href="#projects"> Projects</a></li>
-                        <li><a href="#profile"> Home</a></li>
+                        <li><a href="#about"> Sobre mí</a></li>
+                        <li><a href="#experience"> Experiencia</a></li>
+                        <li><a href="#chart"> Habilidades</a></li>
+                        <li><a href="#projects"> Proyectos</a></li>
+                        <li><a href="#profile"> Inicio</a></li>
                     </ul>
                 </div>
             </nav>
-            <p>Copyrigh &#169; 2024 Anyelo Gutierrez Correa. All Rights Reserved</p>
+            <p>Copyright &#169; 2026 Anyelo Gutierrez Correa. Todos los derechos reservados.</p>
         </footer>     
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-        <script src="FX.js"></script>
-        <script src="skills-chart.js"></script>
-        <script src="script.js"></script>    
+        <script src="FX.js?v=20261013-3"></script>
+        <script src="skills-chart.js?v=20261011-2"></script>
+        <script src="script.js?v=20261011-2"></script>    
         
     </body>
 </html>

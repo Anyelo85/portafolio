@@ -1,59 +1,30 @@
 
 
 {
-  const ctx1 = document.getElementById('myChart').getContext('2d');
-  new Chart(ctx1, {
-    type: 'doughnut',
-    data: {
-      datasets: [{
-        label: '# of Votes',
-        data: [-10, 90],
-        backgroundColor: ['rgb(163, 163, 163)', 'rgb(53, 53, 53)'],
-        borderWidth: 4
-      }],
-      labels: ['90%']
-    }
-  });
+  const charts = [
+    document.getElementById('myChart'),
+    document.getElementById('myChart1'),
+    document.getElementById('myChart2'),
+    document.getElementById('myChart3')
+  ];
 
-  const ctx2 = document.getElementById('myChart1').getContext('2d');
-  new Chart(ctx2, {
-    type: 'doughnut',
-    data: {
-      datasets: [{
-        label: '# of Votes',
-        data: [-15, 85],
-        backgroundColor: ['rgb(163, 163, 163)', 'rgb(53, 53, 53)'],
-        borderWidth: 4
-      }],
-      labels: ['85%']
-    }
-  });
+  charts.forEach((canvas) => {
+    if (!canvas) return;
 
-  const ctx3 = document.getElementById('myChart2').getContext('2d');
-  new Chart(ctx3, {
-    type: 'doughnut',
-    data: {
-      datasets: [{
-        label: '# of Votes',
-        data: [-5, 95],
-        backgroundColor: ['rgb(163, 163, 163)', 'rgb(53, 53, 53)'],
-        borderWidth: 4
-      }],
-      labels: ['95%']
-    }
-  });
+    const ctx = canvas.getContext('2d');
+    if (!ctx || typeof window.Chart === 'undefined') return;
 
-  const ctx4 = document.getElementById('myChart3').getContext('2d');
-  new Chart(ctx4, {
-    type: 'doughnut',
-    data: {
-      datasets: [{
-        label: '# of Votes',
-        data: [-10, 90],
-        backgroundColor: ['rgb(163, 163, 163)', 'rgb(53, 53, 53)'],
-        borderWidth: 4
-      }],
-      labels: ['90%']
-    }
+    new Chart(ctx, {
+      type: 'doughnut',
+      data: {
+        datasets: [{
+          label: '# of Votes',
+          data: [-10, 90],
+          backgroundColor: ['rgb(163, 163, 163)', 'rgb(53, 53, 53)'],
+          borderWidth: 4
+        }],
+        labels: ['90%']
+      }
+    });
   });
 }
