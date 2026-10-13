@@ -458,6 +458,8 @@ a.btn:hover{
     text-align: justify;
     font-size: 1.2rem;
     line-height: 1.7;
+    color: #1f2937;
+    font-weight: 500;
 }
 
 .about-details-container{
