@@ -2,4 +2,8 @@ AGENTS.md
 instrucciones.md
 intr.md
 .env
+.env.*
+.claude/
+.gemini/
+.opencode/
 node_modules/
