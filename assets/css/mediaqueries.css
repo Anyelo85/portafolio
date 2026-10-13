@@ -182,6 +182,12 @@
   .experience-sub-title {
     font-size: clamp(1.2rem, 4.5vw, 1.6rem);
   }
+
+  /* Sobre mí: foto centrada en móvil */
+  #about .about-pic {
+    width: min(100%, 280px);
+    margin: 0 auto;
+  }
 }
 
 /* ---------- <=768px ---------- */

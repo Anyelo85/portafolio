@@ -471,7 +471,19 @@ a.btn:hover{
 }
 
 .about-pic{
+    width: 300px;
+    height: auto;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    object-position: center top;
     border-radius: 2rem;
+    display: block;
+}
+
+#about .section_pic-container{
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
 }
 
 .arrow{
