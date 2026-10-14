@@ -602,6 +602,18 @@ a.btn:hover{
     padding: 0.5rem 0;
     box-sizing: border-box;
     transition: height 0.45s ease;
+    touch-action: pan-y;
+    cursor: grab;
+}
+
+.experience-carousel.is-dragging {
+    cursor: grabbing;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.experience-carousel.is-dragging .experience-track {
+    transition: none;
 }
 
 .experience-track {

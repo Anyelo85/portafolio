@@ -85,6 +85,78 @@ function initExperienceCarousel() {
         startAutoplay();
     });
 
+    const drag = { active: false, started: false, pointerId: null, startX: 0, startY: 0, dx: 0 };
+    let suppressClick = false;
+
+    const setTrackOffset = (px) => {
+        const step = getSlideStep();
+        track.style.transform = `translateX(${-currentIndex * step + px}px)`;
+    };
+
+    const onPointerDown = (event) => {
+        if (event.pointerType === 'mouse' && event.button !== 0) return;
+        drag.active = true;
+        drag.started = false;
+        drag.pointerId = event.pointerId;
+        drag.startX = event.clientX;
+        drag.startY = event.clientY;
+        drag.dx = 0;
+        clearInterval(autoPlayId);
+    };
+
+    const onPointerMove = (event) => {
+        if (!drag.active || event.pointerId !== drag.pointerId) return;
+        const dx = event.clientX - drag.startX;
+        const dy = event.clientY - drag.startY;
+        if (!drag.started) {
+            if (Math.abs(dx) < 8 || Math.abs(dx) <= Math.abs(dy)) return;
+            drag.started = true;
+            track.style.transition = 'none';
+            carousel.classList.add('is-dragging');
+            try { viewport.setPointerCapture(event.pointerId); } catch (error) {}
+        }
+        drag.dx = dx;
+        if (event.cancelable) event.preventDefault();
+        setTrackOffset(dx);
+    };
+
+    const endDrag = (event) => {
+        if (!drag.active || (event && event.pointerId !== drag.pointerId)) return;
+        const wasDragging = drag.started;
+        const dx = drag.dx;
+        drag.active = false;
+        drag.started = false;
+        track.style.transition = '';
+        carousel.classList.remove('is-dragging');
+        if (wasDragging) {
+            const step = getSlideStep();
+            const threshold = Math.min(60, step * 0.15);
+            suppressClick = true;
+            if (dx <= -threshold) {
+                goToSlide(currentIndex + 1);
+            } else if (dx >= threshold) {
+                goToSlide(currentIndex - 1);
+            } else {
+                updateCarousel();
+            }
+        }
+        drag.dx = 0;
+        startAutoplay();
+    };
+
+    viewport.addEventListener('pointerdown', onPointerDown);
+    viewport.addEventListener('pointermove', onPointerMove);
+    viewport.addEventListener('pointerup', endDrag);
+    viewport.addEventListener('pointercancel', endDrag);
+    window.addEventListener('pointerup', endDrag);
+    window.addEventListener('pointercancel', endDrag);
+    viewport.addEventListener('click', (event) => {
+        if (!suppressClick) return;
+        suppressClick = false;
+        event.preventDefault();
+        event.stopPropagation();
+    }, true);
+
     carousel.addEventListener('mouseenter', () => clearInterval(autoPlayId));
     carousel.addEventListener('mouseleave', startAutoplay);
     carousel.addEventListener('focusin', () => clearInterval(autoPlayId));
