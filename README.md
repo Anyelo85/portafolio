@@ -32,7 +32,7 @@ portafolio/
 ├─ robots.txt
 ├─ .gitignore
 ├─ cv/
-│  └─ HV_Anyelo_Gutierrez_Correa_Publica.pdf
+│  └─ HV_Anyelo_Gutierrez_Requerimientos_QA.pdf
 └─ assets/
    ├─ css/
    │  ├─ style.css
@@ -72,7 +72,7 @@ portafolio/
 - Email: anyeloingenierosistema@gmail.com
 - LinkedIn: https://www.linkedin.com/in/angelo-guti%C3%A9rrez-correa-406070338/
 - GitHub: https://github.com/Anyelo85
-- Hoja de vida: `cv/HV_Anyelo_Gutierrez_Correa_Publica.pdf`
+- Hoja de vida: `cv/HV_Anyelo_Gutierrez_Requerimientos_QA.pdf`
 
 ## Despliegue
 
